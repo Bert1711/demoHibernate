@@ -5,7 +5,7 @@ services:
     container_name: my-postgres
     environment:
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=data-access-object
+      - POSTGRES_DB=data-access-object-hibernate
     ports:
       - 5432:5432
     restart: always
