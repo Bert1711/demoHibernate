@@ -32,6 +32,6 @@ public class Person {
     private String phoneNumber;
 
     @ManyToOne(optional = false)
-    private City cityOfLiving;
+    private City city;
 }
 

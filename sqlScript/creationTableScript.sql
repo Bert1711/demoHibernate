@@ -1,12 +1,11 @@
-CREATE SCHEMA schema_users;
-CREATE TABLE schema_users.persons
+CREATE TABLE persons
 (
     name         varchar(150),
     surname      varchar(150),
     age          int CHECK (age >= 0 AND age < 150),
     phone_number varchar(20) CHECK (phone_number ~ '^[0-9+\- ()]+$' AND CHAR_LENGTH (phone_number) >= 7
 ) ,
-    city_of_living varchar(50),
+    city varchar(50),
     PRIMARY KEY (name, surname, age)
 );
 
