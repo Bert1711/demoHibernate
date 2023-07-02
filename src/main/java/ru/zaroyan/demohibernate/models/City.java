@@ -11,25 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Person {
+public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    @Column(name = "name")
+    @Column(nullable = false)
     private String name;
-
-    @Column(name = "surname")
-    private String surname;
-
-    @Column(name = "age")
-    private int age;
-
-    @Column(name = "phone_number")
-    private String phoneNumber;
-
-    @ManyToOne(optional = false)
-    private City cityOfLiving;
-
-
 }
