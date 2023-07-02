@@ -30,6 +30,4 @@ public class Person {
 
     @ManyToOne(optional = false)
     private City cityOfLiving;
-
-
 }
