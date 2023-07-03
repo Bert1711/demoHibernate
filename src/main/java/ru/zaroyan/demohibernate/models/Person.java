@@ -31,7 +31,7 @@ public class Person {
     @Check(constraints = "phone_number ~ '^[0-9+\\- ()]+$' AND CHAR_LENGTH(phone_number) >= 7")
     private String phoneNumber;
 
-    @ManyToOne(optional = false)
-    private City city;
+    @Column(name = "city", length = 150)
+    private String city;
 }
 
