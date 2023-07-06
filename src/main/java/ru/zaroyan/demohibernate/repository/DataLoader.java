@@ -5,6 +5,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import ru.zaroyan.demohibernate.models.City;
 import ru.zaroyan.demohibernate.models.Person;
 import java.util.Arrays;
 import java.util.List;
@@ -35,7 +36,10 @@ public class DataLoader implements CommandLineRunner {
         String surname = getRandomElement(surnames);
         int age = random.nextInt(101); // случайный возраст от 0 до 100
         String phoneNumber = generateRandomPhoneNumber();
-        String city = getRandomElement(cities);
+        City city = City.builder()
+                .name(getRandomElement(cities))
+                .build();
+        entityManager.persist(city);
         return Person.builder()
                 .name(name)
                 .surname(surname)
