@@ -13,6 +13,6 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     List<Person> findByAgeLessThanOrderByAgeAsc(int age);
 
-    Optional<Person> findByNameAndSurname(String name, String surname);
+    Optional<List<Person>> findByNameAndSurname(String name, String surname);
 }
 

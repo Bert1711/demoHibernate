@@ -35,7 +35,7 @@ public class PersonController {
     }
 
     @GetMapping("/name")
-    public Optional<Person> getPersonByNameAndSurname(
+    public Optional<List<Person>>getPersonByNameAndSurname(
             @RequestParam String name, @RequestParam String surname) {
         return personRepository.findByNameAndSurname(name, surname);
     }
